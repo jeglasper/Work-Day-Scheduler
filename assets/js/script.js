@@ -2,9 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-var daytimeEl = dayjs().format('dddd, MMMM D YYYY, h:mm a');
-$('#currentDay').text(daytimeEl);
-
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -23,5 +20,9 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
+
+  //Adds current date in the header of the page.
+  var daytimeEl = dayjs().format('dddd, MMMM D YYYY');
+  $('#currentDay').text(daytimeEl).css('font-weight', 'bolder').css('color', 'purple').css('font-size', '35px');
+
 });
