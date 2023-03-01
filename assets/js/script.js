@@ -44,11 +44,18 @@ $(function () {
     }
   }
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
+  // TODO: Add code to get any user input was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
-//Adds Current Date to Header of the Page
+  localStorage.getItem()
+
+  //for (i = 9; i < 17; i++) {
+    //create variable that selects the id based on the array position
+    //var blockTime = $(timeBlockEl[i]).attr('id');
+
+    //localStorage.getItem('blockTime') = blockTime.text;}
+
   //Use Day.js to create variable that selects the current day
   var currentDay = dayjs().format('dddd, MMMM D YYYY');
   //adds new variable as text to currentDay id and uses JQuery to add styling using css propertiea

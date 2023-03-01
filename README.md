@@ -16,7 +16,7 @@ This website can be used to write down what work as you have done or what upcomi
 
 Please see below for links to Github Repository, the deployed website, and a .gif to explore the functionality of the website:
 
-GitHub Repository:
+GitHub Repository: https://github.com/jeglasper/Work-Day-Scheduler
 Deployed Website:
 
 ![Portfolio Preview]()
