@@ -22,24 +22,18 @@ $(function () {
   console.log(timeBlockEl.length);
   console.log(timeBlockEl);
 
-
-
-  for (i = 0; i < randome.length; i++) {
-    if 
-  }
-
-  //for (i = 0; i < timeBlockEl.length; i++) {
-    //var blockTime = timeBlockEl[i];
-    //console.log(blockTime.attr('id'));
+  for (i = 0; i < timeBlockEl.length; i++) {
+    var blockTime = timeBlockEl[i].attr('id');
+    console.log(blockTime.attr('id'));
     
   
-    //if (timeBlockEl[i].attr('id') < currentHour) {
-      //timeBlockEl[i].addclass('past');
-    //} else if (timeBlockEl[i].attr('id') == currentHour) {
+    if (timeBlockEl[i].attr('id') < currentHour) {
+      timeBlockEl[i].addclass('past');
+    } else if (timeBlockEl[i].attr('id') == currentHour) {
       //timeBlockEl[i].addclass('present');
-    //} else {
-      //timeBlockEl[i].addclass('future');
-    //}
+    } else {
+      timeBlockEl[i].addclass('future');
+    }
 
   //For loop that compares the ID of each div to the current time
   //cycle select the div you want to look at
