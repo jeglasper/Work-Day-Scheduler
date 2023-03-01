@@ -10,43 +10,45 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
+
+//Adds past, present, or future class to each time-block
+  
+  //Use Day.js to create a variable that pulls the current hour in the 24 hour format
   var currentHour = dayjs().format('HH');
   console.log('Curent Time (Hour): ' + currentHour);
-  var timeBlockEl = $('.time-block')
-  //var timeBlockEl2 = $('div[id|="hour"]') 
+ 
+  //Use JQuery selector to select each time-block using the class 'time-block'
+  var timeBlockEl = $('.time-block');
   console.log(timeBlockEl.length);
   console.log(timeBlockEl);
 
+  //Create a for loop that compares the ID of each div to the current hour
   for (i = 0; i < timeBlockEl.length; i++) {
-    var blockTime = timeBlockEl[i].attr('id');
-    console.log(blockTime.attr('id'));
-    
-  
-    if (timeBlockEl[i].attr('id') < currentHour) {
-      timeBlockEl[i].addclass('past');
-    } else if (timeBlockEl[i].attr('id') == currentHour) {
-      //timeBlockEl[i].addclass('present');
-    } else {
-      timeBlockEl[i].addclass('future');
-    }
+    //create variable that selects the id based on the array position
+    var blockTime = $(timeBlockEl[i]).attr('id');
+    console.log(blockTime);
 
-  //For loop that compares the ID of each div to the current time
-  //cycle select the div you want to look at
-  //if statement less than HH, add past class to 
-  //if statement equal to HH, add present class
-  //if statement greater than HH, add future class
+    //create conditional statements comparing id to current hour     
+          //if statement less than HH, add past class to 
+          //if statement equal to HH, add present class
+          //if statement greater than HH, add future class
+    if (blockTime < currentHour) {
+      $(timeBlockEl[i]).addClass('past');
+    } else if (blockTime == currentHour) {
+      $(timeBlockEl[i]).addClass('present');
+    } else {
+      $(timeBlockEl[i]).addClass('future');
+    }
+  }
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
-  //Adds current date in the header of the page.
+//Adds Current Date to Header of the Page
+  //Use Day.js to create variable that selects the current day
   var currentDay = dayjs().format('dddd, MMMM D YYYY');
+  //adds new variable as text to currentDay id and uses JQuery to add styling using css propertiea
   $('#currentDay').text(currentDay).css('font-weight', 'bolder').css('color', 'purple').css('font-size', '35px');
 
 });
