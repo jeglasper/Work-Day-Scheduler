@@ -9,20 +9,50 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  //
+
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
+  var currentHour = dayjs().format('HH');
+  console.log('Curent Time (Hour): ' + currentHour);
+  var timeBlockEl = $('.time-block')
+  //var timeBlockEl2 = $('div[id|="hour"]') 
+  console.log(timeBlockEl.length);
+  console.log(timeBlockEl);
+
+
+
+  for (i = 0; i < randome.length; i++) {
+    if 
+  }
+
+  //for (i = 0; i < timeBlockEl.length; i++) {
+    //var blockTime = timeBlockEl[i];
+    //console.log(blockTime.attr('id'));
+    
+  
+    //if (timeBlockEl[i].attr('id') < currentHour) {
+      //timeBlockEl[i].addclass('past');
+    //} else if (timeBlockEl[i].attr('id') == currentHour) {
+      //timeBlockEl[i].addclass('present');
+    //} else {
+      //timeBlockEl[i].addclass('future');
+    //}
+
+  //For loop that compares the ID of each div to the current time
+  //cycle select the div you want to look at
+  //if statement less than HH, add past class to 
+  //if statement equal to HH, add present class
+  //if statement greater than HH, add future class
+
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
 
   //Adds current date in the header of the page.
-  var daytimeEl = dayjs().format('dddd, MMMM D YYYY');
-  $('#currentDay').text(daytimeEl).css('font-weight', 'bolder').css('color', 'purple').css('font-size', '35px');
+  var currentDay = dayjs().format('dddd, MMMM D YYYY');
+  $('#currentDay').text(currentDay).css('font-weight', 'bolder').css('color', 'purple').css('font-size', '35px');
 
 });
