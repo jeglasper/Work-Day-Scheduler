@@ -3,6 +3,7 @@
 // in the html.
 
 $(function () {
+
 //Adds time-block notes to local storage when you click the save button
   //Event Listener - Click the Save Button on the Time-Block, run a function
   var saveButton = $('.saveBtn');
@@ -28,8 +29,10 @@ $(function () {
   //Create a for loop that compares the ID of each div to the current hour
   for (i = 0; i < timeBlockEl.length; i++) {
     //create variable that selects the id based on the array position
-    var blockTime = $(timeBlockEl[i]).attr('id');
+    var blockTime = $(timeBlockEl[i]).attr('id').substring(5);
+    blockTime = parseInt(blockTime);
     console.log(blockTime);
+    console.log(typeof(blockTime));
 
     //create conditional statements comparing id to current hour     
           //if statement less than HH, add past class to 
@@ -44,18 +47,13 @@ $(function () {
     }
   }
 
-  // TODO: Add code to get any user input was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
+//Adds code to pull values from local storage to corresponding textarea elements
+  for (i = 0; i < timeBlockEl.length; i++) {
+    var storedText = localStorage.getItem($(timeBlockEl[i]).attr('id'));
+    $(timeBlockEl[i]).children().eq(1).text(storedText);
+  }
 
-  localStorage.getItem()
-
-  //for (i = 9; i < 17; i++) {
-    //create variable that selects the id based on the array position
-    //var blockTime = $(timeBlockEl[i]).attr('id');
-
-    //localStorage.getItem('blockTime') = blockTime.text;}
-
+//Adds Current Date to Header Element of HTML
   //Use Day.js to create variable that selects the current day
   var currentDay = dayjs().format('dddd, MMMM D YYYY');
   //adds new variable as text to currentDay id and uses JQuery to add styling using css propertiea
